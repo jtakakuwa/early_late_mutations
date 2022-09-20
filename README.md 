@@ -1,0 +1,23 @@
+Early and Late Conditional Mutation Rate Project 
+Sung Lab: Way Sung, Tyler Turner, David Patton, Jade Takakuwa 
+
+Summary: 
+
+Agrobacterium fabrum, Agrobacterium tumefaciens and Agrobacterium vitis have primary and secondary chromosomes of varying length and shape. The length of the secondary chromosome may affect the mutation rate on portions of the primary chromosome, since sections of each chromosome are replicated simultaneously. 
+
+We divided the primary chromosome into an Early and Late section according to the length of the secondary chromosome and posited two different scenarios. Scenario One would occur when both the primary and secondary chromosomes begin replication at the same time, while Scenario Two would occur when the primary and secondary chromosomes are timed to finish replication at the same time. It is unclear which scenario would occur in each of the organisms, so both scenarios were tested.  
+
+Files: 
+
+variantPipeline.sh 
+
+A Bash script was used to rename read files due to inconsistencies in naming conventions. Reads for each species were aligned to their respective reference file. Reads were converted from SAM to BAM format and then BCFTools was used to call variants. The output VCF file is then filtered with the VCF_filtering.ipynb script.    
+
+VCF_filtering.ipynb 
+
+A Python script to filter poor quality and duplicate mutations. The mutations are converted to a dataframe and then written to an Excel file. 
+
+EarlyLateMutation.ipynb 
+
+A Python script that takes an Excel file of mutations and places each of the mutations into Early and Late categories according to Scenario One and Scenario Two. Outputs an  Excel file according to the category and scenario. 
+
